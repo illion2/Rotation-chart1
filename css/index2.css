@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    width: 800px;
+    height: 450px;
+    margin: 150px auto;
+    position: relative;
+}
+
+.wrapper ul {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* 小圆点 */
+
+.wrapper ol {
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    left: 50%;
+    margin-left: -70px;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper ol li {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.wrapper ol .on {
+    background-color: red;
+}
+
+.wrapper ul li {
+    float: left;
+    position: relative;
+    /* border: 1px solid #000; */
+    box-sizing: border-box;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.8s;
+}
+
+.wrapper ul li div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+/* 上 */
+
+.wrapper ul li div:nth-child(1) {
+    background: url('./img/11.jpg');
+    top: -450px;
+    transform-origin: bottom;
+    transform: translateZ(180px) rotateX(90deg);
+}
+
+
+/* 下 */
+
+.wrapper ul li div:nth-child(2) {
+    background: url('./img/12.jpg');
+    top: 450px;
+    transform-origin: top;
+    transform: translateZ(180px) rotateX(-90deg);
+}
+
+
+/* 前 */
+
+.wrapper ul li div:nth-child(3) {
+    background: url('./img/13.jpg');
+    transform: translateZ(180px);
+}
+
+
+/* 后 */
+
+.wrapper ul li div:nth-child(4) {
+    background: url('./img/14.jpg');
+    transform: translateZ(-180px) rotateX(-180deg);
+}

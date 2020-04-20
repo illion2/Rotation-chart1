@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生JS实现旋转轮播图</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .wrapper {
+            width: 640px;
+            /* 标记 */
+            height: 360px;
+            margin: 150px auto;
+            position: relative;
+        }
+        
+        .wrapper ul {
+            height: 100%;
+            width: 100%;
+        }
+        /* 小圆点 */
+        
+        .wrapper ol {
+            position: absolute;
+            width: 140px;
+            height: 20px;
+            left: 50%;
+            margin-left: -70px;
+            bottom: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .wrapper ol li {
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        
+        .wrapper ol .on {
+            background-color: red;
+        }
+        
+        .wrapper ul li {
+            float: left;
+            position: relative;
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: 0.8s;
+        }
+        
+        .wrapper ul li div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        /* 上 */
+        
+        .wrapper ul li div:nth-child(1) {
+            background: url('./img/11.jpg');
+            top: -360px;
+            transform-origin: bottom;
+            transform: translateZ(180px) rotateX(90deg);
+        }
+        /* 下 */
+        
+        .wrapper ul li div:nth-child(2) {
+            background: url('./img/12.jpg');
+            top: 360px;
+            transform-origin: top;
+            transform: translateZ(180px) rotateX(-90deg);
+        }
+        /* 前 */
+        
+        .wrapper ul li div:nth-child(3) {
+            background: url('./img/13.jpg');
+            transform: translateZ(180px);
+        }
+        /* 后 */
+        
+        .wrapper ul li div:nth-child(4) {
+            background: url('./img/14.jpg');
+            transform: translateZ(-180px) rotateX(-180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <ul class="oUl">
+
+            </ul>
+            <ol>
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ol>
+        </div>
+        <div class="btn">
+            <a href="./index.html">3D轮播图</a>
+            <a href="./index2.html">旋转轮播图</a>
+            <a href="./index3.html">通用轮播图</a>
+        </div>
+    </div>
+    <script src="./js/index2.js"></script>
+</body>
+
+</html>
